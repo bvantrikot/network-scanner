@@ -49,3 +49,38 @@ Avec un `/24`, il y a `2^8 = 256` adresses possibles (de 0 à 255 en dernier oct
 
 Donc l’adresse du réseau est : `192.168.1.0/24` (à mettre dans le fichier python 
 
+### 3. Vérifier que vous êtes dans le bon dossier
+Avant d'exécuter le script, assurez-vous que vous êtes dans le bon répertoire.
+- Tappez : 
+```bash
+dir
+```
+Vous devez voir les fichiers suivants :
+
+- scanner.py
+
+- whitelist.json
+
+- README.md
+(s’ils n’apparaissent pas, vous n’êtes pas dans le bon dossier)
+
+Pour accéder au dossier où se trouve votre fichier, vous pouvez taper le chemin absolu du répertoire dans le terminal juste après la commande `cd`(change directory)
+```bash
+cd C:\Users\votre_nom\Documents\network-scanner
+```
+Ou alors juste deplacer vos dossier dans le répetoire courant.
+
+### 4. Lancer le scan 
+```bash
+python scanner.py
+```
+
+### Fichier whitelist
+Ce fichier `whitelist.json`, permet de declarer les appareils autorisés : 
+```json
+{
+  "192.168.1.1": "Mon PC",
+  "192.168.1.254": "Ma box"
+}
+```
+Les IP non listées ici seront signalées comme "intrus".
